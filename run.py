@@ -1,4 +1,4 @@
-from flask import Flask, make_response, request, redirect, render_template
+from flask import Flask, make_response, request, redirect, render_template, Response, abort
 import requests
 import json
 
@@ -50,13 +50,15 @@ def setcookie():
 #
 @app.route('/getcookie')
 def getcookie():
-    name = request.cookies.get('anuja')
-    return name
-
+    age = request.cookies.get('anuja')
+    return age
 
 #
 # Task 5
 #
+@app.route('/robots.txt')
+def robots_txt():
+    abort(404)
 
 #
 # Task 6
