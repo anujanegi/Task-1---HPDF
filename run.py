@@ -63,6 +63,11 @@ def robots_txt():
 #
 # Task 6
 #
+@app.route('/html')
+@app.route('/html/<name>')
+def html(name=None):
+    return render_template('hello.html', name=name)
+
 
 #
 # Task 7
