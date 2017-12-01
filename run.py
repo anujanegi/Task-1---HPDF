@@ -1,15 +1,19 @@
-from flask import Flask
-from collections import Counter
+from flask import Flask, make_response, redirect
 import requests
 import json
 
 app = Flask(__name__)
 
+#
+# Task 1
+#
 @app.route('/')
 def index():
     return 'Hello World -Anuja'
 
-
+#
+# Task 2
+#
 @app.route('/authors')
 def authors():
     url1 = "https://jsonplaceholder.typicode.com/users"
@@ -32,5 +36,29 @@ def authors():
         text=text+authorNames[i]['name']+" "+str(c)+"<br>"
     return text
 
+#
+# Task 3
+#
+@app.route('/setcookie')
+def setcookie():
+    response = make_response(redirect('/'))
+    response.set_cookie('anuja',value='19')
+    return response
+#
+# Task 4
+#
+
+
+#
+# Task 5
+#
+
+#
+# Task 6
+#
+
+#
+# Task 7
+#
 if __name__ == "__main__":
     app.run(debug=True)
