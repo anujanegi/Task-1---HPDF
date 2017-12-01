@@ -1,4 +1,4 @@
-from flask import Flask, make_response, redirect
+from flask import Flask, make_response, request, redirect, render_template
 import requests
 import json
 
@@ -42,11 +42,16 @@ def authors():
 @app.route('/setcookie')
 def setcookie():
     response = make_response(redirect('/'))
-    response.set_cookie('anuja',value='19')
+    response.set_cookie('anuja', value='19')
     return response
+
 #
 # Task 4
 #
+@app.route('/getcookie')
+def getcookie():
+    name = request.cookies.get('anuja')
+    return name
 
 
 #
