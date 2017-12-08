@@ -1,4 +1,4 @@
-# Task-1---HPDF
+# Task-1-HPDF
 
 Repo for Hasura's Product Development Fellowship, individual task for week 1.
 
@@ -17,7 +17,7 @@ Installing `pip` to manage software packages for python.
 sudo apt-get install python-pip
 ```
 
-Installing Flask.
+Installing `Flask`.
 
 ```
 pip install Flask
