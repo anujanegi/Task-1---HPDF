@@ -33,7 +33,7 @@ sudo pip install requests
 
 1. Clone or download the repository to your system.
 ```
-git clone https://github.com/anujanegi/Task-1---HPDF.git
+git clone https://github.com/anujanegi/Task-1-HPDF.git
 ```
 2. cd to the directory of the repo.
 ```
