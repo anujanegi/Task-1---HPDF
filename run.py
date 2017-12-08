@@ -1,4 +1,6 @@
-from flask import Flask, make_response, request, redirect, render_template, Response, abort
+from __future__ import print_function
+from flask import Flask, make_response, request, redirect, render_template, Response, url_for
+import sys
 import requests
 import json
 
@@ -68,9 +70,18 @@ def robots_txt():
 def html(name=None):
     return render_template('hello.html', name=name)
 
-
 #
 # Task 7
 #
+@app.route('/input')
+def input():
+    return render_template('data.html')
+
+@app.route('/input', methods=['POST'])
+def input_post():
+    data = request.form['data']
+    print(data, file=sys.stdout)        # logging to console
+    return redirect(url_for('input'))   # redirecting to /input   
+
 if __name__ == "__main__":
     app.run(debug=True)
