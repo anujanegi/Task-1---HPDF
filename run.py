@@ -1,5 +1,5 @@
 from __future__ import print_function
-from flask import Flask, make_response, request, redirect, render_template, Response, url_for
+from flask import Flask, make_response, request, redirect, render_template, Response, url_for, abort
 import sys
 import requests
 import json
@@ -81,7 +81,7 @@ def input():
 def input_post():
     data = request.form['data']
     print(data, file=sys.stdout)        # logging to console
-    return redirect(url_for('input'))   # redirecting to /input   
+    return redirect(url_for('input'))   # redirecting to /input
 
 if __name__ == "__main__":
     app.run(debug=True)
